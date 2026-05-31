@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no"
+    />
+    <title>VR DoF Tester - Phone 6DoF</title>
+    <link rel="stylesheet" href="./shared_styles.css" />
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+  </head>
+  <body class="xr-page">
+    <div id="app">
+      <div id="sceneHost"></div>
+    </div>
+
+    <div id="overlay" class="overlay hidden">
+      <div class="topbar">
+        <div class="panel">
+          <div class="controls">
+            <div class="pill"><strong>Mode</strong><span>スマホ画面 / 6DoF</span></div>
+            <div id="supportBadge" class="pill good hidden"></div>
+            <div id="trackingNotice" class="pill warning hidden"></div>
+            <button id="recenter" class="secondary" type="button">空間を前へ置き直す</button>
+            <button id="exitButton" class="secondary" type="button">終了して戻る</button>
+          </div>
+        </div>
+      </div>
+      <div class="bottombar">
+        <div id="hintBar" class="panel hint">
+          床や前方へ端末を向けて少し動かし、空間の固定を待ってください。
+        </div>
+      </div>
+    </div>
+
+    <div id="startScreen" class="start-screen">
+      <section class="launch-card">
+        <p class="eyebrow">Phone Mode</p>
+        <h2>6DoF ビュー</h2>
+        <p>immersive-ar による位置追跡を使う安定版です。床面 hit-test を優先し、難しい場合は初期視線方向を基準に配置します。</p>
+        <div id="supportLine" class="support-line"></div>
+        <div class="mode-actions">
+          <button id="startButton" class="primary" type="button">6DoF を始める</button>
+          <a class="back-link" href="./index.html">ランチャーへ戻る</a>
+        </div>
+        <div id="status" class="status"></div>
+      </section>
+    </div>
+
+    <script type="module" src="./mode_phone_6dof.js"></script>
+  </body>
+</html>

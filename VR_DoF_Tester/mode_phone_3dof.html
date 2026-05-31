@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no"
+    />
+    <title>VR DoF Tester - Phone 3DoF</title>
+    <link rel="stylesheet" href="./shared_styles.css" />
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+  </head>
+  <body class="xr-page">
+    <div id="app">
+      <div id="sceneHost"></div>
+    </div>
+
+    <div id="overlay" class="overlay hidden">
+      <div class="topbar">
+        <div class="panel">
+          <div class="controls">
+            <div class="pill"><strong>Mode</strong><span>スマホ画面 / 3DoF</span></div>
+            <div class="pill"><strong>Status</strong><span>回転のみ / 位置固定 / アイレベル140cm</span></div>
+            <button id="recenter" class="secondary" type="button">視点を戻す</button>
+            <a class="secondary back-link" href="./index.html">ランチャーへ戻る</a>
+          </div>
+        </div>
+      </div>
+      <div class="bottombar">
+        <div class="panel hint">
+          前進しても景色は近づきません。端末の向きを変えたときだけ見え方が変わります。
+        </div>
+      </div>
+    </div>
+
+    <div id="startScreen" class="start-screen">
+      <section class="launch-card">
+        <p class="eyebrow">Phone Mode</p>
+        <h2>3DoF ビュー</h2>
+        <p>スマホ画面を窓として使う安定版です。向きだけを反映し、位置移動は見え方に反映しません。</p>
+        <div class="mode-actions">
+          <button id="startButton" class="primary" type="button">3DoF を始める</button>
+          <a class="back-link" href="./index.html">ランチャーへ戻る</a>
+        </div>
+        <div id="status" class="status"></div>
+      </section>
+    </div>
+
+    <script type="module" src="./mode_phone_3dof.js"></script>
+  </body>
+</html>

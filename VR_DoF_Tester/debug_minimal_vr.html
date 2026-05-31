@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no"
+    />
+    <title>VR DoF Tester - Minimal VR Debug</title>
+    <link rel="stylesheet" href="./shared_styles.css" />
+  </head>
+  <body class="xr-page">
+    <div id="app"></div>
+
+    <div id="overlay" class="overlay hidden">
+      <div class="topbar">
+        <div class="panel">
+          <div class="controls">
+            <div class="pill"><strong>Mode</strong><span>Minimal immersive-vr debug</span></div>
+            <div id="trackingNotice" class="pill warning hidden"></div>
+            <button id="exitButton" class="secondary" type="button">終了して戻る</button>
+          </div>
+        </div>
+      </div>
+      <div class="bottombar">
+        <div id="hintBar" class="panel hint">
+          コンソールで `viewerPosePosition` と `xrCameraPosition`、`trackingStatus` を確認してください。
+        </div>
+      </div>
+    </div>
+
+    <div id="startScreen" class="start-screen">
+      <section class="launch-card">
+        <p class="eyebrow">Debug Tool</p>
+        <h2>Minimal immersive-vr</h2>
+        <p>Cardboard 向け処理を入れずに、Three.js 直描画で `immersive-vr` の pose だけを確認する切り分けページです。</p>
+        <div id="supportLine" class="support-line"></div>
+        <div class="mode-actions">
+          <button id="startButton" class="primary" type="button">デバッグ開始</button>
+          <a class="back-link" href="./index.html">ランチャーへ戻る</a>
+        </div>
+        <div id="status" class="status"></div>
+      </section>
+    </div>
+
+    <script type="module" src="./debug_minimal_vr.js"></script>
+  </body>
+</html>

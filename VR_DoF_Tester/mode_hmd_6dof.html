@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no"
+    />
+    <title>VR DoF Tester - HMD 6DoF</title>
+    <link rel="stylesheet" href="./shared_styles.css" />
+  </head>
+  <body class="xr-page">
+    <div id="app"></div>
+
+    <div id="overlay" class="overlay hidden">
+      <div class="topbar">
+        <div class="panel">
+          <div class="controls">
+            <div class="pill"><strong>Mode</strong><span>Cardboard HMD / 6DoF</span></div>
+            <div id="trackingNotice" class="pill warning hidden"></div>
+            <button id="exitButton" class="secondary" type="button">終了して戻る</button>
+          </div>
+        </div>
+      </div>
+      <div class="bottombar">
+        <div id="hintBar" class="panel hint">
+          実験ページです。対応端末では前進やしゃがみで橋の見え方が変わるかを確認します。
+        </div>
+      </div>
+    </div>
+
+    <div id="startScreen" class="start-screen">
+      <section class="launch-card">
+        <p class="eyebrow">Cardboard HMD / Experimental</p>
+        <h2>6DoF ビュー</h2>
+        <p>Three.js 直描画で immersive-vr の pose を検証する実験ページです。端末によっては 3DoF 相当に退化します。</p>
+        <div id="supportLine" class="support-line"></div>
+        <div class="mode-actions">
+          <button id="startButton" class="primary" type="button">HMD 6DoF を始める</button>
+          <a class="back-link" href="./index.html">ランチャーへ戻る</a>
+        </div>
+        <div id="status" class="status"></div>
+      </section>
+    </div>
+
+    <script type="module" src="./mode_hmd_6dof.js"></script>
+  </body>
+</html>

@@ -1,26 +1,37 @@
 # akira_you_test
 
-高校生向けワークショップで使う WebXR サンプル集です。現在は 2 つのアプリが入っており、VR の視点トラッキング差分と、AR 空間お絵かきを体験できます。
+高校生向けワークショップで使う WebXR サンプル集です。現在は 2 つのアプリが入っており、`3DoF / 6DoF` 比較と、AR 空間お絵かきを試せます。
 
-公開中のデモ:
+## 公開中のデモ
 
-- `VR_DoF_Tester`: http://akirayou.net/test/VR_DoF_Tester
+- ランチャー: http://akirayou.net/test/
 - `WebXR_AR_Paint`: https://akirayou.net/test/WebXR_AR_Paint/
+
+`VR_DoF_Tester` は現在 WIP です。公開先では `test` 直下のランチャーから各モードや実験ページへ入る想定にしています。
 
 ## 収録アプリ
 
-### `VR_DoF_Tester`
+### `VR_DoF_Tester`（WIP）
 
-高所の一本橋を題材に、`3DoF` と `6DoF` の見え方の違いを体験する WebVR アプリです。
+高所の一本橋を題材に、`3DoF` と `6DoF` の見え方の違いを比較する実験アプリです。
 
-- `3DoF 単眼`
-  回転のみを反映する、非ゴーグル前提の表示です。
-- `3DoF ゴーグル`
-  両眼立体視で表示しつつ、位置移動は固定したまま回転だけを反映します。
-- `6DoF`
-  対応端末では、頭の位置移動も含めたトラッキングを使います。
+現状は次のように分かれています。
 
-主なソースは [VR_DoF_Tester/index.html](VR_DoF_Tester/index.html) と [VR_DoF_Tester/app.js](VR_DoF_Tester/app.js) です。
+- 安定版
+  スマホ画面 `3DoF / 6DoF`
+  Cardboard HMD `3DoF`
+- 実験版
+  `immersive-vr` 単独の HMD 6DoF 検証
+  最小 `immersive-vr` デバッグページ
+  `immersive-ar` の pose を自前 stereo へ転送する `pose transfer` 実験
+
+特に `Cardboard HMD 6DoF` は検証中です。現時点では、`immersive-vr` 単独経路よりも `pose transfer` 方式の方が有望です。
+
+関連ファイル:
+
+- 設計仕様: [VR_DoF_Tester/spec.md](VR_DoF_Tester/spec.md)
+- 実験メモ: [VR_DoF_Tester/experiment_notes.md](VR_DoF_Tester/experiment_notes.md)
+- ランチャー: [VR_DoF_Tester/index.html](VR_DoF_Tester/index.html)
 
 ### `WebXR_AR_Paint`
 
@@ -91,3 +102,4 @@ npm run build --silent
 
 - `out/` は生成物なので、手編集せずソース側を更新してから再ビルドします。
 - WebXR 機能の挙動確認には、実機ブラウザやヘッドセットでの検証が必要です。
+- `VR_DoF_Tester` は開発途中です。安定版と実験版を混在させているため、現状把握には `spec.md` と `experiment_notes.md` の両方を参照してください。

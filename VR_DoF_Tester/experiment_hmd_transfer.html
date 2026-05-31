@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no"
+    />
+    <title>VR DoF Tester - Pose Transfer Experiment</title>
+    <link rel="stylesheet" href="./shared_styles.css" />
+  </head>
+  <body class="xr-page">
+    <div id="app"></div>
+
+    <div id="overlay" class="overlay hidden">
+      <div class="topbar">
+        <div class="panel">
+          <div class="controls">
+            <div class="pill"><strong>Mode</strong><span>Pose Transfer Experiment</span></div>
+            <div id="trackingNotice" class="pill warning hidden"></div>
+            <div id="orientationNotice" class="pill warning hidden"></div>
+            <button id="exitButton" class="secondary" type="button">終了して戻る</button>
+          </div>
+        </div>
+      </div>
+      <div class="bottombar">
+        <div id="hintBar" class="panel hint">
+          immersive-ar の pose を使って、左右分割 stereo を自前描画します。Cardboard 表示の比較実験用です。
+        </div>
+      </div>
+    </div>
+
+    <div id="startScreen" class="start-screen">
+      <section class="launch-card">
+        <p class="eyebrow">Experimental</p>
+        <h2>Pose Transfer HMD</h2>
+        <p>位置追跡は <code>immersive-ar</code> から取得し、描画は自前の左右分割 stereo として XR framebuffer へ直接描きます。</p>
+        <div id="supportLine" class="support-line"></div>
+        <div class="mode-actions">
+          <button id="startButton" class="primary" type="button">実験開始</button>
+          <a class="back-link" href="./index.html">ランチャーへ戻る</a>
+        </div>
+        <div id="status" class="status"></div>
+      </section>
+    </div>
+
+    <script type="module" src="./experiment_hmd_transfer.js"></script>
+  </body>
+</html>
