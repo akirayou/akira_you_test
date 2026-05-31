@@ -1,0 +1,13 @@
+node_modules/
+
+# Build outputs
+out/
+
+# Local deployment and sync settings
+sync_out.local.ps1
+*.rsync-filter
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.tmp
