@@ -2,6 +2,11 @@
 
 高校生向けワークショップで使う WebXR サンプル集です。現在は 2 つのアプリが入っており、VR の視点トラッキング差分と、AR 空間お絵かきを体験できます。
 
+公開中のデモ:
+
+- `VR_DoF_Tester`: http://akirayou.net/test/VR_DoF_Tester
+- `WebXR_AR_Paint`: https://akirayou.net/test/WebXR_AR_Paint/
+
 ## 収録アプリ
 
 ### `VR_DoF_Tester`
